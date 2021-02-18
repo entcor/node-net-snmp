@@ -503,7 +503,14 @@ function readVarbinds (buffer, varbinds) {
 		if (type == null)
 			break;
 
-		var value = readVarbindValue (buffer, type);
+
+		var value;
+		try {
+			value = readVarbindValue (buffer, type);
+		} catch (ex) {
+			value = 999;
+			this.emit("error", ex)
+		}
 
 		varbinds.push ({
 			oid: oid,
