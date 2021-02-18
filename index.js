@@ -514,6 +514,7 @@ function readVarbinds (buffer, varbinds) {
 			});
 		} catch (ex) {
 			console.error('error:',oid, ex.message);
+			break;
 		}
 	}
 }
