@@ -507,16 +507,14 @@ function readVarbinds (buffer, varbinds) {
 		var value;
 		try {
 			value = readVarbindValue (buffer, type);
+			varbinds.push ({
+				oid: oid,
+				type: type,
+				value: value
+			});
 		} catch (ex) {
-			value = 999;
-			// this.emit("error", ex)
+			console.error('error:',oid, ex.message);
 		}
-
-		varbinds.push ({
-			oid: oid,
-			type: type,
-			value: value
-		});
 	}
 }
 
