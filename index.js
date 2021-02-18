@@ -509,7 +509,7 @@ function readVarbinds (buffer, varbinds) {
 			value = readVarbindValue (buffer, type);
 		} catch (ex) {
 			value = 999;
-			this.emit("error", ex)
+			// this.emit("error", ex)
 		}
 
 		varbinds.push ({
