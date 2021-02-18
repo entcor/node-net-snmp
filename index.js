@@ -513,7 +513,14 @@ function readVarbinds (buffer, varbinds) {
 				value: value
 			});
 		} catch (ex) {
-			console.error('error:',oid, ex.message);
+			console.error('error:',oid, type, ex.message);
+
+			varbinds.push ({
+				oid: oid,
+				type: type,
+				value: 0
+			});
+
 			break;
 		}
 	}
