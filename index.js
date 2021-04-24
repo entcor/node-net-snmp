@@ -1829,6 +1829,7 @@ var Session = function (target, authenticator, options) {
 	this.reqs = {};
 	this.reqCount = 0;
 
+	console.info("!!!!!!!!!!!!! create in socket");
 	this.dgram = dgram.createSocket (this.transport);
 	this.dgram.unref();
 	
